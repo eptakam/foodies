@@ -1,8 +1,7 @@
-export default function Page() {
+export default function MealDetailsPage() {
   return (
     <main>
-      <h1>Food</h1>
-      <p><Link href="/">Home</Link></p>
+      <h1>Meal Details</h1>
     </main>
   );
 }
