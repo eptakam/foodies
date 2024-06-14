@@ -1,4 +1,4 @@
-'use client';
+'use client'; // permet d'afficher les composants serveur coté client
 
 import { useEffect, useState } from 'react';
 import Image from 'next/image';
