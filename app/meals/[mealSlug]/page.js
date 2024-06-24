@@ -1,4 +1,5 @@
 import Image from 'next/image';
+import { notFound } from 'next/navigation';
 
 import { getMeal } from '@/lib/meals';
 import classes from './page.module.css';
@@ -6,6 +7,11 @@ import classes from './page.module.css';
 export default function MealDetailsPage({params}) {
   // mealSlug : est le nom du dossier dans lequel se trouve le fichier page.js ([mealSlug]) et represente la cle de l'objet params. la valeur de cet objet est l'url actuelle
   const meal = getMeal(params.mealSlug);
+
+  // appeler la fonction notFound() de 'next/navigation' si meal n'est pas trouvé
+  if (!meal) {
+    notFound();
+  }
 
   // bien formater les instructions pour les afficher dans le composant
   meal.instructions = meal.instructions.replace(/\n/g, '<br />');
