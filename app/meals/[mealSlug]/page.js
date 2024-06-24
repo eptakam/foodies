@@ -8,7 +8,7 @@ export default function MealDetailsPage({params}) {
   // mealSlug : est le nom du dossier dans lequel se trouve le fichier page.js ([mealSlug]) et represente la cle de l'objet params. la valeur de cet objet est l'url actuelle
   const meal = getMeal(params.mealSlug);
 
-  // appeler la fonction notFound() de 'next/navigation' si meal n'est pas trouvé
+  // appeler la fonction notFound() de 'next/navigation' si le meal desire n'est pas trouvé. elle appelera le composant NotFound de notre page not-found.js
   if (!meal) {
     notFound();
   }
