@@ -28,6 +28,7 @@ export default function MealsPage() {
           </p>
       </header>
       <main className={classes.main}>
+        {/* Suspense permet de gérer le chargement de la page */}
         <Suspense fallback={<p className={classes.loading}>Fetching meals...</p>}>
           <Meals />
         </Suspense>
