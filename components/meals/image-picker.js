@@ -1,4 +1,6 @@
 'use client';
+
+import Image from 'next/image';
 import { useState } from 'react';
 import { useRef } from 'react';
 import classes from './image-picker.module.css';
