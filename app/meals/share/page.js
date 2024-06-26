@@ -11,6 +11,8 @@ export default function ShareMealPage() {
   /*
     Note: 
         useFormState() : permet de gérer l'état du formulaire. il a deux arguments dont le premier est un objet qui contient les valeurs initiales des champs du formulaire et le deuxième est l'etat initial du composant.
+
+        message : represente la cle (key) du return de la fonction shareMeal() dans le fichier actions.js
   */
   const [state, formAction] = useFormState(shareMeal, {message: null});
   
