@@ -20,7 +20,12 @@ export default function MealDetailsPage({params}) {
     <>
       <header className={classes.header}>
         <div className={classes.image}>
-          <Image src={meal.image} alt={meal.title} fill />
+          {/* <Image src={meal.image} alt={meal.title} fill /> */} {/* utilisation du fichier image dans le dossier public(public/images) */}
+          <Image
+            src={`https://emmataks-nextjs-demo-users-image.s3.ca-central-1.amazonaws.com/${meal.image}`}
+            alt={meal.title}
+            fill
+          /> {/* utilisation d'une image stockée dans S3 bucket d'AWS de facon dynamique */}
         </div>
         <div className={classes.headerText}>
           <h1>{meal.title}</h1>
