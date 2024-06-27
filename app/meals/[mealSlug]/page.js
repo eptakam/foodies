@@ -4,6 +4,19 @@ import { notFound } from 'next/navigation';
 import { getMeal } from '@/lib/meals';
 import classes from './page.module.css';
 
+export async function generateMetadata({ params }) {
+  const meal = getMeal(params.mealSlug);
+
+  if (!meal) {
+    notFound();
+  }
+  
+  return {
+    title: meal.title,
+    description: meal.summary,
+  };
+}
+
 export default function MealDetailsPage({params}) {
   // mealSlug : est le nom du dossier dans lequel se trouve le fichier page.js ([mealSlug]) et represente la cle de l'objet params. la valeur de cet objet est l'url actuelle
   const meal = getMeal(params.mealSlug);
